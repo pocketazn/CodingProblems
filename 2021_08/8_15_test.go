@@ -123,3 +123,17 @@ func TestGetProductsOfSliceWithoutDivision(t *testing.T) {
 		})
 	}
 }
+
+func BenchmarkGetProductOfSliceWithDivision(b *testing.B) {
+	for n := 0; n < b.N; n++ {
+		GetProductOfSliceWithDivision([]int{1, 2, 3, 4, 5, 6, 7, 8, 9, 10})
+	}
+}
+
+// averages about 20% faster than division
+// TIL: Multiplication is way less intensive than division
+func BenchmarkGetProductOfSliceWithoutDivision(b *testing.B) {
+	for n := 0; n < b.N; n++ {
+		GetProductOfSliceWithOutDivision([]int{1, 2, 3, 4, 5, 6, 7, 8, 9, 10})
+	}
+}
