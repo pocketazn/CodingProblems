@@ -87,3 +87,9 @@ func TestDoesListContainSumPairEqualToK(t *testing.T) {
 	}
 
 }
+
+func BenchmarkDoesListContainSumPairEqualToK(b *testing.B) {
+	for n := 0; n < b.N; n++ {
+		DoesListContainSumPairEqualToK([]int{1, 1, 1, 1, 1, 1, 1, 1, 10})
+	}
+}

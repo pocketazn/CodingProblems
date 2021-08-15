@@ -26,7 +26,7 @@ func DoesListContainSumPairEqualToK(givenList []int) bool {
 			continue
 		}
 
-		// Test Value against negfhhtdfxt values in slice to the end
+		// Test Value against next values in slice to the end
 		for i := start + 1; i < len(givenList); i++ {
 			if CompareSumToK(ValueX, givenList[i]) {
 				return true
