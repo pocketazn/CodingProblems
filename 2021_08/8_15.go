@@ -40,4 +40,22 @@ func GetProductOfAllElements(sample []int) int {
 	return ProductResult
 }
 
+func GetProductOfSliceWithOutDivision(sample []int) []int {
+	if len(sample) < 2 {
+		return []int{}
+	}
 
+	response := make([]int, len(sample))
+	for x, _ := range sample {
+		ProductResult := 1
+		for i, factor := range sample {
+			if i == x {
+				continue
+			}
+			ProductResult = ProductResult * factor
+		}
+		response[x] = ProductResult
+	}
+
+	return response
+}

@@ -5,7 +5,7 @@ import (
 	"testing"
 )
 
-func TestGetProductsOfSlice(t *testing.T) {
+func TestGetProductsOfSliceWithDivision(t *testing.T) {
 	type TestCase struct {
 		Name           string
 		Input          []int
@@ -76,6 +76,49 @@ func TestGetProductOfAllElements(t *testing.T) {
 	for _, tt := range Cases {
 		t.Run(tt.Name, func(t *testing.T) {
 			result := GetProductOfAllElements(tt.Input)
+			assert.Equal(t, tt.ExpectedResult, result)
+		})
+	}
+}
+
+func TestGetProductsOfSliceWithoutDivision(t *testing.T) {
+	type TestCase struct {
+		Name           string
+		Input          []int
+		ExpectedResult []int
+	}
+
+	Cases := []TestCase{
+		{
+			Name:           "Single Element",
+			Input:          []int{3},
+			ExpectedResult: []int{},
+		},
+		{
+			Name:           "No Elements",
+			Input:          []int{},
+			ExpectedResult: []int{},
+		},
+		{
+			Name:           "2 Elements",
+			Input:          []int{1, 2},
+			ExpectedResult: []int{2, 1},
+		},
+		{
+			Name:           "3 Elements",
+			Input:          []int{3, 2, 1},
+			ExpectedResult: []int{2, 3, 6},
+		},
+		{
+			Name:           "Example from Problem",
+			Input:          []int{1, 2, 3, 4, 5},
+			ExpectedResult: []int{120, 60, 40, 30, 24},
+		},
+	}
+
+	for _, tt := range Cases {
+		t.Run(tt.Name, func(t *testing.T) {
+			result := GetProductOfSliceWithOutDivision(tt.Input)
 			assert.Equal(t, tt.ExpectedResult, result)
 		})
 	}
