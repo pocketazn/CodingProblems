@@ -29,7 +29,7 @@ N/A
 
 # Developer Details
 
-##Installation
+## Installation
 
 ### Install Go
 Install the Go programming language compiler (version 1.16 or later) and toolset: [golang.org](https://golang.org/doc/install)
@@ -37,14 +37,17 @@ Install the Go programming language compiler (version 1.16 or later) and toolset
 ### Clone from Github
 Clone the repo:  `git clone git@github.com:pocketazn/CodingProblems.git`
 
+### Setup
+
+Run  `go mod vendor` and `go mod tidy` to sync dependencies
+
 ## File Linting
 
 All major editors have Go plugins that can automate running `gofmt` and/or `gometalinter` and other tools to keep your code clean, consistent, and properly formatted.
 
-**You must have at least ONE approval from a Search team member to proceed. If none are available, you must get at least one senior engineer to approve.
-TWO approvals are required to merge into Master.**
-
 ## Testing
+
+Testing should cover all use cases and edge cases for problems.
 
 ### Requirements
 We require 100%* test coverage of this repo. You *must* strive to increase test coverage as much as possible. No exceptions.
