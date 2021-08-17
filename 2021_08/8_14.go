@@ -1,4 +1,4 @@
-package main
+package _2021_08
 
 const (
 	k = 17
