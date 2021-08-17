@@ -2,6 +2,7 @@ package _2021_08
 
 import (
 	"fmt"
+	"strings"
 )
 
 //Given the root to a binary tree, implement serialize(root), which
@@ -21,25 +22,56 @@ import (
 //assert deserialize(serialize(node)).left.left.val == 'left.left'
 
 type Node struct {
-	Left *Node
+	Left  *Node
 	Right *Node
-	Data string
+	Data  int
 }
 
-func Serialize(tree *Node) string {
-	left := ""
-	right := ""
-	if tree.Left != nil {
-		left = Serialize(tree.Left)
+func (n *Node) Insert(data int) {
+	if n == nil {
+		return
+	} else if data <= n.Data {
+		// make left node or insert into left node
+		if n.Left == nil {
+			n.Left = &Node{Data: data}
+		} else {
+			n.Left.Insert(data)
+		}
+	} else {
+		// make right node or insert into right node
+		if n.Right == nil {
+			n.Right = &Node{Data: data}
+		} else {
+			n.Right.Insert(data)
+		}
 	}
-
-	if tree.Right != nil {
-		right = Serialize(tree.Right)
-	}
-
-	return fmt.Sprintf("[%s.%s.%s]", tree.Data, left, right)
 }
 
-func Deserialize(treeString string) Node {
-	return Node{}
+type BinaryTree struct {
+	root *Node
+}
+
+func (b *BinaryTree) Insert(Value int) *BinaryTree {
+	if b.root == nil {
+		b.root = &Node{Data: Value}
+	} else {
+		b.root.Insert(Value)
+	}
+	return b
+}
+
+func Serialize(root *Node) string {
+	var values []string
+	values = append(values, fmt.Sprint(root.Data))
+	if root.Left != nil {
+		values = append(values, Serialize(root.Left))
+	}
+	if root.Right != nil {
+		values = append(values, Serialize(root.Right))
+	}
+	return strings.Join(values, ",")
+}
+
+func Deserialize(treeString string) *Node {
+	return &Node{}
 }
