@@ -22,6 +22,7 @@ import (
 //node = Node('root', Node('left', Node('left.left')), Node('right'))
 //assert deserialize(serialize(node)).left.left.val == 'left.left'
 
+// time to solve 3:45 minutes
 type Node struct {
 	Left  *Node
 	Right *Node
