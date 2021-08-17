@@ -2,6 +2,7 @@ package _2021_08
 
 import (
 	"fmt"
+	"strconv"
 	"strings"
 )
 
@@ -72,6 +73,13 @@ func Serialize(root *Node) string {
 	return strings.Join(values, ",")
 }
 
-func Deserialize(treeString string) *Node {
-	return &Node{}
+func Deserialize(treeString string) BinaryTree {
+	insertOrder := strings.Split(treeString, ",")
+	tree := BinaryTree{}
+	for _, data := range insertOrder {
+		if val, err := strconv.Atoi(data); err == nil {
+			tree.Insert(val)
+		}
+	}
+	return tree
 }
