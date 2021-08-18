@@ -91,18 +91,18 @@ func TestDeserialize(t *testing.T) {
 
 func TestSerializeAndDeserialize(t *testing.T) {
 	type TestCase struct {
-		Name string
-		InsertList     []int
+		Name       string
+		InsertList []int
 	}
 
 	Cases := []TestCase{
 		{
-			Name:           "Single Node",
-			InsertList:     []int{4},
+			Name:       "Single Node",
+			InsertList: []int{4},
 		},
 		{
-			Name:           "Single Node",
-			InsertList:     []int{4,6,7,8,10, 1,3,5,7,2,3,8,9,22,45,100,56,77},
+			Name:       "Single Node",
+			InsertList: []int{4, 6, 7, 8, 10, 1, 3, 5, 7, 2, 3, 8, 9, 22, 45, 100, 56, 77},
 		},
 	}
 
