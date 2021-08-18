@@ -101,8 +101,8 @@ func TestSerializeAndDeserialize(t *testing.T) {
 			InsertList: []int{4},
 		},
 		{
-			Name:           "Mixed Value Tree",
-			InsertList:     []int{4, 6, 7, 8, 10, 1, 3, 5, 7, 2, 3, 8, 9, 22, 45, 100, 56, 77},
+			Name:       "Mixed Value Tree",
+			InsertList: []int{4, 6, 7, 8, 10, 1, 3, 5, 7, 2, 3, 8, 9, 22, 45, 100, 56, 77},
 		},
 	}
 

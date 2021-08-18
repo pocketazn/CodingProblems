@@ -48,6 +48,11 @@ func TestFindLowestPositiveInt(t *testing.T) {
 			Sample:         []int{1, 2, 0},
 			ExpectedResult: 3,
 		},
+		{
+			Name:           "All Repeating",
+			Sample:         []int{1, 1, 1, 1, 1, 1, 1, 1},
+			ExpectedResult: 2,
+		},
 	}
 
 	for _, tt := range Cases {
