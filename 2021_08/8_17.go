@@ -13,6 +13,8 @@ import "sort"
 //
 //You can modify the input array in-place.
 
+// time to solve 20 mins
+
 func FindLowestPositiveInt(sample []int) int {
 	if len(sample) == 0 {
 		return 0
