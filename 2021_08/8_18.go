@@ -15,13 +15,13 @@ package _2021_08
 // solve time. 3 Mins
 
 type Pair struct {
-	First int
+	First  int
 	Second int
 }
 
 func Cons(f int, s int) Pair {
 	return Pair{
-		First: f,
+		First:  f,
 		Second: s,
 	}
 }
