@@ -18,13 +18,13 @@ import (
 // incomplete due to not figuriong out how to get binaries to address
 
 type XORNode struct {
-	Both *XORNode
+	Both  *XORNode
 	Value interface{}
 }
 
 type XORLinkedList struct {
 	First *XORNode
-	Last *XORNode
+	Last  *XORNode
 }
 
 func (r XORLinkedList) Add(val interface{}) {

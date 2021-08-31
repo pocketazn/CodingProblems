@@ -16,6 +16,6 @@ func F() {
 }
 
 func Scheduler(function f, i int) {
-	time.Sleep(time.Duration(i)*time.Millisecond)
+	time.Sleep(time.Duration(i) * time.Millisecond)
 	function()
 }
