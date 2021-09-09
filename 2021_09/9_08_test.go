@@ -11,6 +11,6 @@ func TestList_DeleteElement(t *testing.T) {
 			SampleLinkedList.Insert(i)
 		}
 
-		SampleLinkedList.DeleteElementAtIndex(2)
+		SampleLinkedList.DeleteElementAtIndex(-7)
 	})
 }
